@@ -35,6 +35,6 @@ public class ParkingPlaceStorageImpl implements ParkingPlaceStorage {
 
     @Override
     public boolean hasAvailablePlace() {
-        return repository.getAvailablePlaceCountByStatus(ParkingPlaceStatus.AVAILABLE) > 0;
+        return repository.countByStatus(ParkingPlaceStatus.AVAILABLE) > 0;
     }
 }
