@@ -10,6 +10,12 @@ services:
       - pgdata:/var/lib/postgresql/data/
     environment:
       - POSTGRES_PASSWORD=postgres123
+  parking:
+    #restart: always
+    build: .
+    command: which jar
+    depends_on:
+      - postgres
 
 volumes:
   pgdata:
